@@ -2,10 +2,14 @@ package com.learn.spring.boot.todo.task;
 
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.Size;
+
 public class ToDo {
 	
 	private int id;
-	private String description, userEmail;
+	@Size(min = 10, message = "Minimum size is 10")
+	private String description;
+	private String userEmail;
 	private LocalDate date;
 	private boolean isCompleted;
 	
